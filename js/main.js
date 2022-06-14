@@ -6,7 +6,9 @@
   target.textContent = word;
 
   document.addEventListener('keydown', e =>{
-    if (e.key === word[loc])
+    if (e.key !== word[loc]){
+      return;
+    }
     loc++;
 
     target.textContent='_'.repeat(loc) + word.substring(loc);

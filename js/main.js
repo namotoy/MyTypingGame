@@ -1,8 +1,15 @@
 'use strict'
 {
-  const word = 'skyblue';
+  const words = [
+    'pengin',
+    'panda',
+    'dolphin',
+    'taiger'
+  ];
+  let word;
   let loc = 0;
   const target = document.getElementById('target');
+  word = words[Math.floor(Math.random()*words.length)];
   target.textContent = word;
 
   document.addEventListener('keydown', e =>{

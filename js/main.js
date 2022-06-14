@@ -1,7 +1,7 @@
 'use strict'
 {
   function setWord(){
-    word = words[Math.floor(Math.random()*words.length)];
+    word = words.splice(Math.floor(Math.random() * words.length),1)[0];
     target.textContent = word;
     loc = 0;  
   }
@@ -24,6 +24,11 @@
 
     target.textContent='_'.repeat(loc) + word.substring(loc);
     if (loc === word.length){
+      if (words.length ===0){
+        const result = document.getElementById('result');
+        result.textContent = 'FINISHED!';
+        return;
+      }
       setWord();
     }
   });
